@@ -39,3 +39,15 @@ int insertar(struct arbol **miArbol, int dato){
     return 1;
 }
 
+void mostrar(struct arbol *miArbol) {
+
+    if(miArbol == NULL){
+
+        return;
+    }
+    printf(" \t%d ", miArbol->dato);
+
+    mostrar(miArbol->derecho);
+
+    mostrar(miArbol->izquierdo);
+}

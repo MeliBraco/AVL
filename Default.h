@@ -8,4 +8,8 @@ struct arbol{
     struct arbol *derecho;
 };
 
+//predefino los metodos que voy a utilizar
+
 int insertar(struct arbol ** , int);
+
+void mostrar(struct arbol *);

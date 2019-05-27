@@ -9,5 +9,7 @@ int main(){
 
     insertar(&un_arbol , 1);
 
+    mostrar(un_arbol);
+
     return 0;
 }
