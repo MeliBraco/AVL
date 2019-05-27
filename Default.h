@@ -8,4 +8,4 @@ struct arbol{
     struct arbol *derecho;
 };
 
-
+int insertar(struct arbol ** , int);
