@@ -39,8 +39,28 @@ int insertar(struct arbol **miArbol, int dato){
     return 1;
 }
 
-void mostrar(struct arbol *miArbol) {
+void eliminar(struct arbol *miArbol, int dato) {
+    //metodo para eliminar un nodo del arbol
+}
 
+void recorrerPre(struct arbol *miArbol){
+    //metodo para recorrer el arbol en pre-order
+}
+
+void recorrerPos(struct arbol *miArbol){
+    //metodo para recorrer el arbol en pos-order
+}
+
+void recorrerIn(struct arbol *miArbol){
+    //metodo para recorrer el arbol en in-order
+}
+
+void buscar(struct arbol *miArbol, int dato){
+    //tiene que buscar un dato en el arbol
+}
+
+void mostrar(struct arbol *miArbol) {
+    //muestro el dato de manera recursiva
     if(miArbol == NULL){
 
         return;
