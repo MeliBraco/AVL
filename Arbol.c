@@ -70,10 +70,22 @@ void recorrerPre(struct arbol *miArbol){
 
 void recorrerPos(struct arbol *miArbol){
     //metodo para recorrer el arbol en pos-order
+    //visitar izq->der->raiz
+    if(miArbol !=NULL){
+        printf(" \t%d ",miArbol->dato);
+        recorrerPre(miArbol->izquierdo);
+        recorrerPre(miArbol->derecho);
+    }
 }
 
 void recorrerIn(struct arbol *miArbol){
     //metodo para recorrer el arbol en in-order
+    //visitar izq->raiz->der
+    if(miArbol !=NULL){
+        printf(" \t%d ",miArbol->dato);
+        recorrerPre(miArbol->izquierdo);
+        recorrerPre(miArbol->derecho);
+    }
 }
 
 void buscar(struct arbol *miArbol, int dato){
