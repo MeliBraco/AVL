@@ -53,8 +53,8 @@ void mostrar(struct arbol *miArbol) {
 }
 
 
-void eliminar(struct arbol *miArbol, int dato) {
-    //metodo para eliminar un nodo del arbol
+int eliminar(struct arbol *miArbol, int dato) {
+    //metodo para eliminar un nodo del arbol, devuelve 0 si no encontro el dato (para lanzar excepcion)
 }
 
 void recorrerPre(struct arbol *miArbol){
