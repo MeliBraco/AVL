@@ -59,6 +59,13 @@ int eliminar(struct arbol *miArbol, int dato) {
 
 void recorrerPre(struct arbol *miArbol){
     //metodo para recorrer el arbol en pre-order
+    //visitar raiz->izq->der
+    if(miArbol !=NULL){
+        printf(" \t%d ",miArbol->dato);
+        recorrerPre(miArbol->izquierdo);
+        recorrerPre(miArbol->derecho);
+    }
+    
 }
 
 void recorrerPos(struct arbol *miArbol){
