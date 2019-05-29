@@ -40,7 +40,9 @@ int insertar(struct arbol **miArbol, int dato){
 }
 
 void mostrar(struct arbol *miArbol) {
+
     //muestro el dato de manera recursiva
+
     if(miArbol == NULL){
 
         return;
@@ -58,33 +60,43 @@ int eliminar(struct arbol *miArbol, int dato) {
 }
 
 void recorrerPre(struct arbol *miArbol){
-    //metodo para recorrer el arbol en pre-order
-    //visitar raiz->izq->der
+
+    //metodo para recorrer el arbol en pre-order: visitar raiz->izq->der
+
     if(miArbol !=NULL){
+
         printf(" \t%d ",miArbol->dato);
+
         recorrerPre(miArbol->izquierdo);
+
         recorrerPre(miArbol->derecho);
     }
-    
 }
 
 void recorrerPos(struct arbol *miArbol){
-    //metodo para recorrer el arbol en pos-order
-    //visitar izq->der->raiz
+
+    //metodo para recorrer el arbol en pos-order: visitar izq->der->raiz
+
     if(miArbol !=NULL){
+
+        recorrerPos(miArbol->izquierdo);
+
+        recorrerPos(miArbol->derecho);
+
         printf(" \t%d ",miArbol->dato);
-        recorrerPre(miArbol->izquierdo);
-        recorrerPre(miArbol->derecho);
     }
 }
 
 void recorrerIn(struct arbol *miArbol){
-    //metodo para recorrer el arbol en in-order
-    //visitar izq->raiz->der
+
+    //metodo para recorrer el arbol en in-order: visitar izq->raiz->der
+
     if(miArbol !=NULL){
+        recorrerIn(miArbol->izquierdo);
+
         printf(" \t%d ",miArbol->dato);
-        recorrerPre(miArbol->izquierdo);
-        recorrerPre(miArbol->derecho);
+
+        recorrerIn(miArbol->derecho);
     }
 }
 

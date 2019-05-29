@@ -5,12 +5,26 @@ int main() {
 
     struct arbol *un_arbol = NULL;
 
-    insertar(&un_arbol, 4);
+    insertar(&un_arbol, 12);
 
-    insertar(&un_arbol, 1);
+    insertar(&un_arbol, 7);
 
-    mostrar(un_arbol);
+    insertar(&un_arbol, 21);
 
+    insertar(&un_arbol, 2);
+
+
+
+
+    recorrerPos(un_arbol);
+
+    printf("\n");
+
+    recorrerIn(un_arbol);
+
+    printf("\n");
+
+    recorrerPre(un_arbol);
 
     return 0;
 }
@@ -48,7 +62,6 @@ void menu(struct arbol *un_arbol) {
                 break;
 
             case 3:
-                mostrar(un_arbol);
                 break;
 
             case 4:
