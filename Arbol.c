@@ -58,8 +58,33 @@ int buscar(struct arbol *MiArbol, int dato){
 }
 
 
-int eliminar(struct arbol *miArbol, int dato) {
+int eliminar(struct arbol *miArbol, int datoAeliminar) {
     //metodo para eliminar un nodo del arbol, devuelve 0 si no encontro el dato (para lanzar excepcion)
+    //me fijo si el arbol esta vacio
+    if (miArbol == NULL){
+        return 0;
+    }
+    if (miArbol->dato == datoAeliminar){
+        //si no tiene hijos
+        if (miArbol->izquierdo == NULL && miArbol->derecho == NULL){
+            /*
+             la funcion free libera la memora de lo que tiene adentro,
+             por lo tanto se eliminan sus punteros
+             y los punteros que apuntaban al dato ahora van a NULL
+             */
+            free(miArbol);
+        }// falta completar para cuando tiene hijos
+
+
+    }
+    //busco recursivamente el dato
+    if (miArbol->dato < datoAeliminar){
+        miArbol->izquierdo = eliminar(miArbol->izquierdo, datoAeliminar);
+    }
+    if (miArbol->dato > datoAeliminar) {
+        miArbol->derecho = eliminar(miArbol->derecho, datoAeliminar);
+    }
+
 }
 
 void recorrerPre(struct arbol *miArbol){
