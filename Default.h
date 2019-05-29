@@ -12,6 +12,14 @@ int insertar(struct arbol ** , int);
 
 void mostrar(struct arbol *);
 
+int eliminar(struct arbol ** , int);
+
+void recorrerPre(struct arbol *);
+
+void recorrerPos(struct arbol *);
+
+void recorrerIn(struct arbol *);
+
 int alturaArbol(struct arbol *);
 
 
