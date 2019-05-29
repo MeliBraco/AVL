@@ -35,23 +35,26 @@ int insertar(struct arbol **miArbol, int dato){
             insertar(&((*miArbol)->izquierdo), dato);
         }
     }
-
     return 1;
 }
 
-void mostrar(struct arbol *miArbol) {
+int buscar(struct arbol *MiArbol, int dato){
 
-    //muestro el dato de manera recursiva
+    if(MiArbol == NULL){
 
-    if(miArbol == NULL){
-
-        return;
+        return 0;
     }
-    printf(" \t%d ", miArbol->dato);
+    if(MiArbol->dato == dato){
 
-    mostrar(miArbol->derecho);
+        return 1;
+    }
+    if(MiArbol->dato < dato){
 
-    mostrar(miArbol->izquierdo);
+        return buscar(MiArbol->derecho, dato);
+    }
+    else{
+        return buscar(MiArbol->izquierdo, dato);
+    }
 }
 
 
@@ -100,7 +103,5 @@ void recorrerIn(struct arbol *miArbol){
     }
 }
 
-void buscar(struct arbol *miArbol, int dato){
-    //tiene que buscar un dato en el arbol
-}
+
 

@@ -22,5 +22,5 @@ void recorrerIn(struct arbol *);
 
 int alturaArbol(struct arbol *);
 
-
+int buscar(struct arbol *, int);
 
