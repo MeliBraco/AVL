@@ -39,6 +39,20 @@ int insertar(struct arbol **miArbol, int dato){
     return 1;
 }
 
+void mostrar(struct arbol *miArbol) {
+    //muestro el dato de manera recursiva
+    if(miArbol == NULL){
+
+        return;
+    }
+    printf(" \t%d ", miArbol->dato);
+
+    mostrar(miArbol->derecho);
+
+    mostrar(miArbol->izquierdo);
+}
+
+
 void eliminar(struct arbol *miArbol, int dato) {
     //metodo para eliminar un nodo del arbol
 }
@@ -59,15 +73,3 @@ void buscar(struct arbol *miArbol, int dato){
     //tiene que buscar un dato en el arbol
 }
 
-void mostrar(struct arbol *miArbol) {
-    //muestro el dato de manera recursiva
-    if(miArbol == NULL){
-
-        return;
-    }
-    printf(" \t%d ", miArbol->dato);
-
-    mostrar(miArbol->derecho);
-
-    mostrar(miArbol->izquierdo);
-}
