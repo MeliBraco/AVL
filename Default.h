@@ -12,7 +12,7 @@ int insertar(struct arbol ** , int);
 
 void mostrar(struct arbol *);
 
-int eliminar(struct arbol * , int);
+int eliminar(struct arbol ** , int);
 
 void recorrerPre(struct arbol *);
 
