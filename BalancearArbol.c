@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int alturaArbol(struct arbol *miArbol){
 
     int alturaizq = 0;
@@ -23,3 +22,14 @@ int alturaArbol(struct arbol *miArbol){
     }
 }
 
+int balanceo(struct arbol * miArbol){
+
+    int altura = 0;
+
+    if(miArbol == NULL){
+
+        return 0;
+    }
+
+    return altura;
+}
