@@ -40,6 +40,8 @@ int insertar(struct arbol **miArbol, int dato){
 
 int buscar(struct arbol *MiArbol, int dato){
 
+    //devuelve  si existe el dato y 0 en caso contrario
+
     if(MiArbol == NULL){
 
         return 0;
@@ -57,10 +59,6 @@ int buscar(struct arbol *MiArbol, int dato){
     }
 }
 
-
-int eliminar(struct arbol *miArbol, int dato) {
-    //metodo para eliminar un nodo del arbol, devuelve 0 si no encontro el dato (para lanzar excepcion)
-}
 
 void recorrerPre(struct arbol *miArbol){
 
