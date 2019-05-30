@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "Arbol.c"
-//#include "BalancearArbol.c"
 
 int main() {
 
@@ -13,7 +12,8 @@ int main() {
     insertar(&un_arbol, 21);
 
     insertar(&un_arbol, 2);
-    recorrerPre(un_arbol);
+
+    printf(" %d", buscar(un_arbol,8));
 
     return 0;
 }
