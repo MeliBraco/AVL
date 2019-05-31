@@ -13,6 +13,8 @@ int main() {
 
     insertar(&un_arbol, 2);
 
+    recorrerIn(un_arbol);
+
     printf(" %d", buscar(un_arbol,8));
 
     return 0;

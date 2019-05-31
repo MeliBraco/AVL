@@ -16,7 +16,7 @@ int insertar(struct arbol **miArbol, int dato){
         if(*miArbol == NULL){
 
             return 0;
-    }
+        }
         (*miArbol)->dato = dato;
 
         (*miArbol)->izquierdo = NULL;
@@ -99,6 +99,5 @@ void recorrerIn(struct arbol *miArbol){
         recorrerIn(miArbol->derecho);
     }
 }
-
 
 

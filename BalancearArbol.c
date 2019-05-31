@@ -31,5 +31,7 @@ int balanceo(struct arbol * miArbol){
         return 0;
     }
 
+    altura = alturaArbol(miArbol->derecho) - alturaArbol(miArbol->izquierdo);
+
     return altura;
 }
