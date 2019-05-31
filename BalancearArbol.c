@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/*
+   Con respecto al balanceo la diferencia de altura entre el subArbol derecho
+   y el izquierdo es a lo sumo de 1
+
+*/
+
 int alturaArbol(struct arbol *miArbol){
 
     int alturaizq = 0;
@@ -36,6 +42,18 @@ int balanceo(struct arbol * miArbol){
     return altura;
 }
 
+void BalancearArbol(struct arbol ** miArbol) {
+
+    int aux = 0;
+
+    //Evalua si el arbol esta vacio
+    if(miArbol == NULL){
+
+        return;
+    }
+
+
+}
 
 int rotarDerecha(struct arbol ** miArbol){
 

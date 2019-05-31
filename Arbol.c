@@ -3,6 +3,14 @@
 #include "Default.h"
 #include "BalancearArbol.c"
 
+/*
+    AVL Arbol binario balanceado en donde todos sus nodos cumplen con la siguiente
+    condidcion: el elemento izquierdo es menor y el elemento derecho es mayor al nodo
+    raiz. Partiendolo en subArboles
+
+*/
+
+
 int insertar(struct arbol **miArbol, int dato){
 
     //evaluo si esta vacio
@@ -99,5 +107,4 @@ void recorrerIn(struct arbol *miArbol){
         recorrerIn(miArbol->derecho);
     }
 }
-
 

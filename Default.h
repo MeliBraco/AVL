@@ -20,6 +20,8 @@ int alturaArbol(struct arbol *);
 
 int buscar(struct arbol *, int);
 
+void balancearAVL(struct arbol **);
+
 int reordenar(struct arbol **, struct arbol **);
 
 int balanceo(struct arbol *);
