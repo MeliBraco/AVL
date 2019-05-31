@@ -42,7 +42,7 @@ int balanceo(struct arbol * miArbol){
     return altura;
 }
 
-void BalancearArbol(struct arbol ** miArbol) {
+void balancearAVL(struct arbol ** miArbol) {
 
     int aux = 0;
 
@@ -51,8 +51,32 @@ void BalancearArbol(struct arbol ** miArbol) {
 
         return;
     }
+    aux = balanceo(*miArbol);
 
+    if(aux > 1){
 
+        if(balanceo((*miArbol)->derecho) >= 1){
+
+            rotarIzquierda(miArbol);
+        }
+        else{
+            rotarDerecha(&((*miArbol)->derecho));
+
+            rotarIzquierda(miArbol);
+        }
+    }
+    else if(aux < -1){
+
+        if(balanceo((*miArbol)->izquierdo) <= -1){
+
+            rotarDerecha(miArbol);
+        }
+        else{
+            rotarIzquierda(&((*miArbol)->izquierdo));
+
+            rotarDerecha(miArbol);
+        }
+    }
 }
 
 int rotarDerecha(struct arbol ** miArbol){

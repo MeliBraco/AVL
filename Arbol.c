@@ -43,6 +43,9 @@ int insertar(struct arbol **miArbol, int dato){
             insertar(&((*miArbol)->izquierdo), dato);
         }
     }
+
+    balancearAVL(miArbol);
+
     return 1;
 }
 
