@@ -35,3 +35,54 @@ int balanceo(struct arbol * miArbol){
 
     return altura;
 }
+
+
+int rotarDerecha(struct arbol ** miArbol){
+
+    struct arbol *auxiliar = NULL;
+
+    struct arbol *raiz = NULL;
+
+    struct arbol *raiz_nueva = NULL;
+
+    if(miArbol == NULL){
+
+        return 0;
+    }
+    raiz = (*miArbol);
+
+    raiz_nueva = (*miArbol) -> izquierdo;
+
+    auxiliar = (*miArbol) -> izquierdo -> derecho;
+
+    (*miArbol) = raiz_nueva;
+
+    raiz_nueva -> derecho = raiz;
+
+    raiz -> izquierdo = auxiliar;
+
+    return 1;
+}
+
+int rotarIzquierda(struct arbol ** miArbol){
+
+    struct arbol *auxiliar = NULL;
+
+    struct arbol *raiz = NULL;
+
+    struct arbol *raiz_nueva = NULL;
+
+    if(miArbol == NULL){
+
+        return 0;
+    }
+    raiz = *miArbol;
+
+    raiz_nueva = (*miArbol) -> derecho;
+
+    auxiliar = (*miArbol) -> derecho -> izquierdo;
+
+    raiz -> derecho = auxiliar;
+
+    return 1;
+}

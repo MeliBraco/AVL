@@ -13,12 +13,25 @@ int main() {
 
     insertar(&un_arbol, 2);
 
+    insertar(&un_arbol, 9);
+
+    insertar(&un_arbol, 99);
+
+    insertar(&un_arbol, 13);
+
+    recorrerPre(un_arbol);
+
+    printf("\n");
+
     recorrerIn(un_arbol);
 
-    printf(" %d", buscar(un_arbol,8));
+    printf("\n");
+
+    recorrerPos(un_arbol);
 
     return 0;
 }
+
 
 void menu(struct arbol *un_arbol) {
 
