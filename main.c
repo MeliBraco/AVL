@@ -111,7 +111,9 @@ void menu(struct arbol *un_arbol) {
 }
 
 int main() {
+
     struct arbol *un_arbol = NULL;
+
     menu(un_arbol);
 
     return 0;

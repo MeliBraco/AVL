@@ -111,3 +111,59 @@ void recorrerIn(struct arbol *miArbol){
     }
 }
 
+int  eliminar ( struct arbol ** miArbol, int dato) {
+
+    struct   arbol ** aux = NULL ;
+
+    if (miArbol == NULL ) {
+
+        return  0 ;
+    }
+
+    if ((* miArbol) -> dato == dato) {
+
+        if ((* miArbol) -> derecho == NULL ) {
+
+            (* miArbol) = (* miArbol) -> izquierdo ;
+
+            balancearAVL (miArbol);
+        }
+        else  if ((* miArbol) -> izquierdo == NULL ) {
+            (* miArbol) = (* miArbol) -> derecho ;
+            balancearAVL (miArbol);
+        }
+        else {
+            aux = miArbol;
+
+            reordenar (& ((* miArbol) -> izquierdo ), aux);
+
+            balancearAVL (& ((* miArbol) -> izquierdo ));
+        }
+    }
+    else  if ((* miArbol) -> dato <dato) {
+        if ((* miArbol) -> derecho == NULL ) {
+            return  0 ;
+        }
+        return  eliminar (& ((* miArbol) -> derecho ), dato);
+    }
+    else {
+        if ((* miArbol) -> izquierdo == NULL ) {
+            return  0 ;
+        }
+        return  eliminar (& ((* miArbol) -> izquierdo ), dato);
+    }
+
+    return  1 ;
+}
+
+int reordenar(struct arbol **miArbol, struct arbol **aux_arbol) {
+
+    if ((*miArbol)->derecho == NULL){
+
+        (*aux_arbol)->dato = (*miArbol)->dato;
+
+        *miArbol = (*miArbol)->izquierdo;
+    }else
+        reordenar(&(*miArbol)->derecho, aux_arbol);
+    return 1;
+}

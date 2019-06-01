@@ -29,3 +29,5 @@ int balanceo(struct arbol *);
 int rotarDerecha(struct arbol **);
 
 int rotarIzquierda(struct arbol **);
+
+int eliminar(struct arbol **, int);
