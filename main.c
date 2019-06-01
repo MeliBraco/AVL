@@ -8,8 +8,9 @@ void menuRecorrer(struct arbol *un_arbol) {
         printf("\n1- Recorrer en Pre-Orden"
                "\n2- Recorrer en In-Orden"
                "\n3- Recorrer en Pos-Orden"
-               "\n4- Volver atras");
-        scanf("%d", opciones);
+               "\n4- Volver atras\n"
+               "\nIngrese la opcion: ");
+        scanf("%d", &opciones);
 
         switch(opciones) {
             case 1:
@@ -21,6 +22,10 @@ void menuRecorrer(struct arbol *un_arbol) {
             case 3:
                 recorrerPos(un_arbol);
                 break;
+            case 4:
+                break;
+            default:
+                printf("Entrada incorrecta, por favo ingrese un numero del 1 al 4");
         }
     }while(opciones != 4);
 
@@ -54,6 +59,7 @@ void menu(struct arbol *un_arbol) {
 
                 scanf("%d", &dato);
                 insertar( &un_arbol, dato);
+                printf("%d fue ingresado correctamente", dato);
                 //printf("%d insertado correctamente", dato);
 
                 break;
@@ -68,12 +74,13 @@ void menu(struct arbol *un_arbol) {
                 break;
             case 4:
                 printf("\nIngrese el dato a buscar:");
-                scanf("%d", dato);
+                scanf("%d", &dato);
                 buscar(un_arbol, dato);
                 break;
 
             case 5:
                 //modo demo
+                printf("\nCrea un arbol con los numeros: 12, 7, 21, 2, 9, 99, 13\n");
                 insertar(&un_arbol, 12);
                 insertar(&un_arbol, 7);
                 insertar(&un_arbol, 21);
@@ -89,6 +96,7 @@ void menu(struct arbol *un_arbol) {
                 printf("\n");
                 printf("Recorre en Pos-Orden");
                 recorrerPos(un_arbol);
+                //falta demostrar que puede eliminar
                 break;
 
             case 6:
@@ -103,9 +111,7 @@ void menu(struct arbol *un_arbol) {
 }
 
 int main() {
-
     struct arbol *un_arbol = NULL;
-
     menu(un_arbol);
 
     return 0;
