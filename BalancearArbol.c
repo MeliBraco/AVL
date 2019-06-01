@@ -118,11 +118,15 @@ int rotarIzquierda(struct arbol ** miArbol){
 
         return 0;
     }
-    raiz = *miArbol;
+    raiz = * miArbol;
 
-    raiz_nueva = (*miArbol) -> derecho;
+    raiz_nueva = (* miArbol) -> derecho;
 
-    auxiliar = (*miArbol) -> derecho -> izquierdo;
+    auxiliar = (* miArbol) -> derecho -> izquierdo;
+
+    * miArbol = raiz_nueva;
+
+    (* miArbol) -> izquierdo = raiz;
 
     raiz -> derecho = auxiliar;
 
