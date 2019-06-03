@@ -99,10 +99,11 @@ void menu(struct arbol *un_arbol) {
                 printf("Recorre en Pos-Orden");
                 recorrerPos(un_arbol);
                 printf("Elimina el 7, el 99 y el 13");
+                printf("\n");
                 eliminar(&un_arbol, 7);
                 eliminar(&un_arbol, 99);
                 eliminar(&un_arbol, 13);
-                recorrerPre(&un_arbol);
+                recorrerPre(un_arbol);
                 break;
 
             case 6:
