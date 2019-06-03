@@ -66,7 +66,9 @@ void menu(struct arbol *un_arbol) {
 
             case 2:
                 //Elimina un dato
-                //eliminar( &un_arbol, dato);
+                printf("\nIngrese el valor del dato a eliminar: ");
+                scanf("%d", &dato);
+                eliminar( &un_arbol, dato);
                 break;
 
             case 3:;
@@ -96,7 +98,11 @@ void menu(struct arbol *un_arbol) {
                 printf("\n");
                 printf("Recorre en Pos-Orden");
                 recorrerPos(un_arbol);
-                //falta demostrar que puede eliminar
+                printf("Elimina el 7, el 99 y el 13");
+                eliminar(&un_arbol, 7);
+                eliminar(&un_arbol, 99);
+                eliminar(&un_arbol, 13);
+                recorrerPre(&un_arbol);
                 break;
 
             case 6:

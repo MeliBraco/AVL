@@ -116,38 +116,40 @@ int  eliminar ( struct arbol ** miArbol, int dato) {
     struct   arbol ** aux = NULL ;
 
     if (miArbol == NULL ) {
-
+        printf("No existe el dato en el arbol, no se puede eliminar");
         return  0 ;
     }
 
     if ((* miArbol) -> dato == dato) {
 
         if ((* miArbol) -> derecho == NULL ) {
-
             (* miArbol) = (* miArbol) -> izquierdo ;
-
+            printf("El dato se ha eliminado correctamente");
             balancearAVL (miArbol);
         }
         else  if ((* miArbol) -> izquierdo == NULL ) {
             (* miArbol) = (* miArbol) -> derecho ;
+            printf("El dato se ha eliminado correctamente");
             balancearAVL (miArbol);
         }
         else {
             aux = miArbol;
 
             reordenar (& ((* miArbol) -> izquierdo ), aux);
-
+            printf("El dato se ha eliminado correctamente");
             balancearAVL (& ((* miArbol) -> izquierdo ));
         }
     }
     else  if ((* miArbol) -> dato <dato) {
         if ((* miArbol) -> derecho == NULL ) {
+            printf("No existe el dato en el arbol, no se puede eliminar");
             return  0 ;
         }
         return  eliminar (& ((* miArbol) -> derecho ), dato);
     }
     else {
         if ((* miArbol) -> izquierdo == NULL ) {
+            printf("No existe el dato en el arbol, no se puede eliminar");
             return  0 ;
         }
         return  eliminar (& ((* miArbol) -> izquierdo ), dato);
